@@ -1,0 +1,25 @@
+id|name|manager_id
+1|praveen|2
+2|Murali|3
+3|Ketav|4
+4|Kishta|null
+6|Naveen|3
+
+select name from table1 where table1.id not in (select manager_id from table1)
+
+
+name|status|domain
+praveen|browsed|google
+praveen|viewed|dummy
+praveen|cart|dummy
+praveen|purchased|dummy
+Kishta|browsed|firefox
+Kishta|viewed|dummy
+Kishta|cart|dummy
+Kiran|browsed|bing
+Kiran|viewed|dummy
+Kiran|cart|dummy
+Kiran|purchased|dummy
+
+select name,domain from table1 where table1.name in (select name from table1 where table1.status == purchased)
+and table1.domain not equals to dummy
